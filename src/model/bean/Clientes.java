@@ -15,6 +15,15 @@ public class Clientes {
     private int codigo;
     private String descricao;
     private String nome_cliente;
+    private String observacao;
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
     private int qtd;
 
     public int getId() {

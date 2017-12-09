@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import model.bean.Clientes;
@@ -41,7 +42,8 @@ public class ViewJTable extends javax.swing.JFrame {
                 p.getCodigo(),
                 p.getDescricao(),
                 p.getQtd(),
-                p.getNome()
+                p.getNome(),
+                p.getObservacao(),
             });
 
         }
@@ -60,7 +62,8 @@ public class ViewJTable extends javax.swing.JFrame {
                 p.getCodigo(),
                 p.getDescricao(),
                 p.getQtd(),
-                p.getNome()
+                p.getNome(),
+                p.getObservacao(),
             });
 
         }
@@ -90,6 +93,8 @@ public class ViewJTable extends javax.swing.JFrame {
         txtCodigo = new javax.swing.JTextField();
         txtId = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtObservacao = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTClientes = new javax.swing.JTable();
@@ -172,6 +177,11 @@ public class ViewJTable extends javax.swing.JFrame {
 
         jLabel5.setText("ID");
 
+        txtObservacao.setColumns(20);
+        txtObservacao.setRows(5);
+        txtObservacao.setName("observacao"); // NOI18N
+        jScrollPane2.setViewportView(txtObservacao);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -180,37 +190,40 @@ public class ViewJTable extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(51, 51, 51))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(18, 18, 18)
+                        .addGap(120, 120, 120)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(131, 131, 131)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addComponent(txtBuscaDesc)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton4)
-                        .addGap(21, 21, 21))))
+                        .addGap(21, 21, 21))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel1))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtQtd, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(51, 51, 51))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,7 +242,9 @@ public class ViewJTable extends javax.swing.JFrame {
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -244,11 +259,11 @@ public class ViewJTable extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "CÓDIGO PROJETO", "DESCRIÇÃO", "QTD", "NOME"
+                "ID", "CÓDIGO PROJETO", "DESCRIÇÃO", "QTD", "NOME", "OBSERVAÇÃO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -316,6 +331,7 @@ public class ViewJTable extends javax.swing.JFrame {
         p.setNome(txtNome.getText());
         p.setCodigo(Integer.parseInt(txtCodigo.getText()));
         p.setId(Integer.parseInt(txtId.getText()));
+        p.setObservacao(txtObservacao.getText());
         dao.create(p);
 
         txtDesc.setText("");
@@ -323,6 +339,7 @@ public class ViewJTable extends javax.swing.JFrame {
         txtNome.setText("");
         txtCodigo.setText("");
         txtId.setText("");
+        txtObservacao.setText("");
 
         readJTable();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -337,12 +354,13 @@ public class ViewJTable extends javax.swing.JFrame {
             p.setId((int) jTClientes.getValueAt(jTClientes.getSelectedRow(), 0));
             
             dao.delete(p);
-
+            
             txtDesc.setText("");
             txtQtd.setText("");
             txtNome.setText("");
             txtCodigo.setText("");
             txtId.setText("");
+            txtObservacao.setText("");
 
             readJTable();
 
@@ -362,6 +380,7 @@ public class ViewJTable extends javax.swing.JFrame {
             txtNome.setText(jTClientes.getValueAt(jTClientes.getSelectedRow(), 4).toString());
             txtCodigo.setText(jTClientes.getValueAt(jTClientes.getSelectedRow(), 1).toString());
             txtId.setText(jTClientes.getValueAt(jTClientes.getSelectedRow(), 0).toString());
+            txtObservacao.setText(jTClientes.getValueAt(jTClientes.getSelectedRow(), 5).toString());
         }
 
     }//GEN-LAST:event_jTClientesMouseClicked
@@ -375,6 +394,7 @@ public class ViewJTable extends javax.swing.JFrame {
             txtNome.setText(jTClientes.getValueAt(jTClientes.getSelectedRow(), 4).toString());
             txtCodigo.setText(jTClientes.getValueAt(jTClientes.getSelectedRow(), 1).toString());
             txtId.setText(jTClientes.getValueAt(jTClientes.getSelectedRow(), 0).toString());
+            txtObservacao.setText(jTClientes.getValueAt(jTClientes.getSelectedRow(), 5).toString());
         }
 
     }//GEN-LAST:event_jTClientesKeyReleased
@@ -386,19 +406,21 @@ public class ViewJTable extends javax.swing.JFrame {
 
             Clientes p = new Clientes();
             ClientesDAO dao = new ClientesDAO();
-
+            
             p.setDescricao(txtDesc.getText());
             p.setQtd(Integer.parseInt(txtQtd.getText()));
             p.setNome(txtNome.getText());
             p.setId((int) jTClientes.getValueAt(jTClientes.getSelectedRow(), 0));
             p.setCodigo(Integer.parseInt(txtCodigo.getText()));
+            p.setObservacao(txtObservacao.getText());
             dao.update(p);
-
+            
             txtDesc.setText("");
             txtQtd.setText("");
             txtNome.setText("");
             txtCodigo.setText("");
             txtId.setText("");
+            txtObservacao.setText("");
 
             readJTable();
 
@@ -488,12 +510,14 @@ public class ViewJTable extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTClientes;
     private javax.swing.JTextField txtBuscaDesc;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtDesc;
     private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JTextArea txtObservacao;
     private javax.swing.JTextField txtQtd;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,11 +34,12 @@ public class ClientesDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO projeto (descricao,quantidade,nome_cliente,cod_projeto,ativo)VALUES(?,?,?,?,1)");
+            stmt = con.prepareStatement("INSERT INTO projeto (descricao,quantidade,nome_cliente,cod_projeto,ativo,observacao)VALUES(?,?,?,?,1,?)");
             stmt.setString(1, p.getDescricao());
             stmt.setInt(2, p.getQtd());
             stmt.setString(3, p.getNome());
             stmt.setInt(4, p.getCodigo());
+            stmt.setString(5, p.getObservacao());
 
             stmt.executeUpdate();
 
@@ -71,6 +72,7 @@ public class ClientesDAO {
                 projeto.setNome(rs.getString("nome_cliente"));
                 projeto.setDescricao(rs.getString("descricao"));
                 projeto.setQtd(rs.getInt("quantidade"));
+                projeto.setObservacao(rs.getString("observacao"));
                 projetos.add(projeto);
             }
 
@@ -105,6 +107,7 @@ public class ClientesDAO {
                 projeto.setNome(rs.getString("nome_cliente"));
                 projeto.setDescricao(rs.getString("descricao"));
                 projeto.setQtd(rs.getInt("quantidade"));
+                projeto.setObservacao(rs.getString("observacao"));
                 projetos.add(projeto);
             }
 
@@ -123,12 +126,13 @@ public class ClientesDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("UPDATE projeto SET descricao = ? ,quantidade = ?,nome_cliente = ?,cod_projeto = ?,ativo = 1 WHERE id = ?");
+            stmt = con.prepareStatement("UPDATE projeto SET descricao = ? ,quantidade = ?,nome_cliente = ?,cod_projeto = ?,ativo = 1, observacao = ? WHERE id = ?");
             stmt.setString(1, p.getDescricao());
             stmt.setInt(2, p.getQtd());
             stmt.setString(3, p.getNome());
             stmt.setInt(4, p.getCodigo());
             stmt.setInt(5, p.getId());
+            stmt.setString(6, p.getObservacao());
 //            stmt.setInt(6, p.getId());
 
             stmt.executeUpdate();
